@@ -8,19 +8,16 @@
  *
  * @author s225342
  */
-public enum Mobile {
+public class FMark 
+{
+    public int mX = -1;
+    public int mY = -1;
+    public boolean mIsPC;
+    public boolean mFlag;
     
-    Samsung(400), Nokia(250), Motorola(325);
-    
-    int price;
-    
-    Mobile(int i) { price = i;}
-    
-    int showPrice()
+    public boolean Different(FMark m2)
     {
-        return price;
+        return mX != m2.mX && mY != m2.mY;
     }
-    
 }
-
 

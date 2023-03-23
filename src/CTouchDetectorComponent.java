@@ -4,21 +4,21 @@ import java.awt.event.MouseListener;
 import java.util.Vector;
 import javax.swing.JComponent;
 
-public class TouchDetectorComponent extends JComponent implements MouseListener {
+public class CTouchDetectorComponent extends JComponent implements MouseListener {
 
     
-    TouchDetectorInterface tdi = null;
-    AI ai;
+    private CTouchDetectorInterface mTouchDetectorInterface = null;
+    private CAI mAI = null;
     
     
-    public TouchDetectorComponent(AI ai)
+    public CTouchDetectorComponent(CAI ai)
     {
-        this.ai = ai;
+        this.mAI = ai;
     }
     
-    public void setDelegate(TouchDetectorInterface i)
+    public void setDelegate(CTouchDetectorInterface i)
     {
-        tdi = i;
+        mTouchDetectorInterface = i;
     }
     
     @Override
@@ -30,8 +30,13 @@ public class TouchDetectorComponent extends JComponent implements MouseListener 
         int x = arg0.getPoint().x / 300;
         int y = arg0.getPoint().y / 300;
         
-        Vector<Mark> m = ai.UserTouch(x, y);
-        tdi.OnDrawMarks(m);
+        Vector<FMark> m = mAI.UserTouch(x, y);
+        mTouchDetectorInterface.OnDrawMarks(m);
+        
+        if(mAI.GetWinningData().mFlag)
+        {
+            mTouchDetectorInterface.OnDrawWinningLine(mAI.GetWinningData());
+        }
     }
 
     @Override

@@ -11,7 +11,8 @@ import java.util.Vector;
  *
  * @author s225342
  */
-public interface TouchDetectorInterface 
+public interface CTouchDetectorInterface 
 {
-    public void OnDrawMarks(Vector<Mark> marks);
+    public void OnDrawMarks(Vector<FMark> marks);
+    public void OnDrawWinningLine(FWinningData wd);
 }

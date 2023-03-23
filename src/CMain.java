@@ -3,14 +3,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class Main 
+public class CMain 
 {  
     public static void main(String[] args) 
     {
-        AI ai = new AI();
+        CAI ai = new CAI();
         
-         MainFrame mf = new MainFrame(ai);
-         mf.setDefaultCloseOperation(MainFrame.EXIT_ON_CLOSE);
+         CMainFrame mf = new CMainFrame(ai);
+         mf.setDefaultCloseOperation(CMainFrame.EXIT_ON_CLOSE);
          
          
          
